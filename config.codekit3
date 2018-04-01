@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "26330",
 "files": {
+	"\/CNAME": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CNAME",
+		"oF": 0
+		},
 	"\/images\/ak.jpg": {
 		"ft": 16384,
 		"iS": 136852,
@@ -24,6 +31,16 @@
 		"iS": 118271,
 		"oA": 0,
 		"oAP": "\/images\/cats.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/paint.jpg": {
+		"ft": 16384,
+		"iS": 1120785,
+		"oA": 0,
+		"oAP": "\/images\/paint.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

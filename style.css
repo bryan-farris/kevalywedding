@@ -7,6 +7,7 @@ html {
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     background: white;
+    color: #414141;
 }
 body {
 	background: url(images/ricepaper2.png) repeat;
@@ -41,50 +42,106 @@ img {
 }
 
 /* The fun part ====================================== */
-
+.logo {
+	position: absolute;
+	top: 0;
+	left: 430px;
+	z-index: 9;
+}
+.book-it {
+	color: #414141;
+	text-decoration: none;
+	position: absolute;
+	bottom: 200px;
+	left: 20%;
+	z-index: 9;
+	background: #7ec7e3;
+	outline: none;
+	border: none;
+	font-size: 30px;
+	line-height: 1.2;
+	padding: 10px;
+    -webkit-transition: all .35s cubic-bezier(.42,0,.58,1);
+    transition: all .35s cubic-bezier(.42,0,.58,1);
+    box-shadow: -5px 5px #ffffff;
+}
+.book-it:hover {
+	background: #ffffff;
+	box-shadow: 0px 0px #ffffff;
+}
 .main {
 	display: flex;
-	padding: 100px 8vw;
+	align-items: flex-start;
+	align-content: flex-start;
+	padding: 165px 8vw 100px 8vw;
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	position: relative;
+	box-sizing: border-box;
 }
 .main:after {
 	
 }
 .main > .img {
-	width: 40%;
+	width: 400px;
 	z-index: 2;
+	background: #fff;
+	padding: 10px;
+	
+	box-sizing: border-box;
 }
 .main > .text {
-	width: 55%;
+	background: rgba(255,255,255,.35);
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+	width: 550px;
 	margin-left: 5%;
+	margin-top: 10%;
+	padding: 25px;
 	z-index: 2;
-}
-
-.cute-couple {
-	width: 300px;
-	height: 500px; 
-	display: block;
-	background: url(images/cats.jpg) no-repeat;
-	background-size: contain;
-	margin: 0 auto;
-}
-
-h1 {
-	text-align: center;
-	margin: 100px auto 20px auto;
+	font-size: 20px;
+	line-height: 1.4;
+	box-sizing: border-box;
 }
 
 .paint {
 	display: block;
 	width: 750px;
 	height: 605px;
-	background: url(images/paint.png) no-repeat;
-	background-size: 750px 605px;
+	background: url(images/paint.jpg) no-repeat;
+	background-size: cover;
 	position: absolute;
 	z-index: 1;
+}
+
+/* The mobile part ====================================== */
+
+@media screen and (max-width: 700px) {
+	.main {
+		width: 100%;
+		padding: 30px;
+		display: block;
+	}
+	.main > .img, 
+	.main > .text {
+		width: 100%;
+		margin: 0;
+	}
+	.logo, .book-it {
+		position: relative;
+	}
+	.logo {
+		left: 0;
+	}
+	.paint {
+		width: 100%;
+		height: auto;
+	}
+	.book-it {
+		bottom: 0;
+	}
 }
