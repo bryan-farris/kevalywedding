@@ -51,9 +51,6 @@ img {
 .book-it {
 	color: #414141;
 	text-decoration: none;
-	position: absolute;
-	bottom: 200px;
-	left: 20%;
 	z-index: 9;
 	background: #7ec7e3;
 	outline: none;
@@ -64,6 +61,7 @@ img {
     -webkit-transition: all .35s cubic-bezier(.42,0,.58,1);
     transition: all .35s cubic-bezier(.42,0,.58,1);
     box-shadow: -5px 5px #ffffff;
+    align-self: flex-end;
 }
 .book-it:hover {
 	background: #ffffff;
@@ -73,12 +71,10 @@ img {
 	display: flex;
 	align-items: flex-start;
 	align-content: flex-start;
-	padding: 165px 8vw 100px 8vw;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10vh 0;
 	position: relative;
 	box-sizing: border-box;
 }
@@ -86,11 +82,10 @@ img {
 	
 }
 .main > .img {
-	width: 400px;
+	width: 300px;
 	z-index: 2;
 	background: #fff;
 	padding: 10px;
-	
 	box-sizing: border-box;
 }
 .main > .text {
@@ -116,6 +111,9 @@ img {
 	background-size: cover;
 	position: absolute;
 	z-index: 1;
+	left: 0;
+	top: 50%;
+	transform: translatey(-50%);
 }
 
 /* The mobile part ====================================== */
