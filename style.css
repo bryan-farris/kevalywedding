@@ -3,7 +3,7 @@ html {
 	height: 100%;
     font-family: "canada-type-gibson", serif;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     background: white;
@@ -16,6 +16,10 @@ body {
 p {
 	margin-bottom: 20px;
 	margin-top: 0;
+	line-height: 1.5;
+}
+strong {
+	font-weight: 500;
 }
 img {
 	height: auto;
@@ -24,10 +28,10 @@ img {
 }
 .sr {
 	position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px; padding: 0; border: 0; 
 }
 .hide-for-now {
 	display: none !important;
@@ -42,11 +46,24 @@ img {
 }
 
 /* The fun part ====================================== */
-.logo {
-	position: absolute;
-	top: 0;
-	left: 430px;
+.main {
+	display: flex;
+	align-items: flex-start;
+	align-content: flex-start;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10vh 0;
+	position: relative;
+	box-sizing: border-box;
+	transition: width ease .3s;
+}
+.left, .right {
 	z-index: 9;
+}
+.right {
+	position: relative;
+	margin-top: -100px
 }
 .book-it {
 	color: #414141;
@@ -60,49 +77,54 @@ img {
 	padding: 10px;
     -webkit-transition: all .35s cubic-bezier(.42,0,.58,1);
     transition: all .35s cubic-bezier(.42,0,.58,1);
+    -webkit-box-shadow: -5px 5px #ffffff;
+    -moz-box-shadow: -5px 5px #ffffff;
     box-shadow: -5px 5px #ffffff;
-    align-self: flex-end;
+    margin: 50px 0 0 20px;
+    display: inline-block;
 }
 .book-it:hover {
 	background: #ffffff;
 	box-shadow: 0px 0px #ffffff;
 }
-.main {
-	display: flex;
-	align-items: flex-start;
-	align-content: flex-start;
-	justify-content: center;
-	width: 80%;
-	margin: 0 auto;
-	padding: 10vh 0;
-	position: relative;
-	box-sizing: border-box;
+.book-it i {
+	font-size: 20px;
+	vertical-align: middle;
+	transition: margin .3s ease;
 }
-.main:after {
-	
+.book-it:hover i {
+	margin-left: 10px;
 }
-.main > .img {
+.img {
 	width: 300px;
 	z-index: 2;
 	background: #fff;
 	padding: 10px;
 	box-sizing: border-box;
 }
-.main > .text {
+.logo {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+}
+.text {
 	background: rgba(255,255,255,.35);
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
 	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
 	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
-	width: 550px;
+	max-width: 550px;
 	margin-left: 5%;
-	margin-top: 10%;
+	margin-top: 225px;
 	padding: 25px;
 	z-index: 2;
 	font-size: 20px;
 	line-height: 1.4;
 	box-sizing: border-box;
 }
-
+.text p:last-child {
+	margin-bottom: 0;
+}
 .paint {
 	display: block;
 	width: 750px;
@@ -115,31 +137,104 @@ img {
 	top: 50%;
 	transform: translatey(-50%);
 }
+.logo--mobile {
+	display: none;
+}
 
 /* The mobile part ====================================== */
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 851px) and (max-width: 1100px) {
+	.main {
+		width: 100%;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+@media screen and (min-width: 721px) and (max-width: 850px) {
 	.main {
 		width: 100%;
 		padding: 30px;
 		display: block;
 	}
-	.main > .img, 
-	.main > .text {
+	.left, .right {
 		width: 100%;
-		margin: 0;
-	}
-	.logo, .book-it {
 		position: relative;
 	}
+	.right, .text {
+		margin-top: 0;
+	}
+	.img {
+		width: calc(100% - 400px);
+		display: inline-block;
+		vertical-align: bottom;
+	}
 	.logo {
-		left: 0;
+		top: -70%;
+	}
+	.book-it {
+		margin-bottom: 10px;
+	}
+	.main .text {
+		width: 100%;
+		margin: 50px 0 0 0;
+		max-width: none;
 	}
 	.paint {
 		width: 100%;
-		height: auto;
 	}
 	.book-it {
 		bottom: 0;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.logo {
+		display: none;
+	}
+	.logo--mobile {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		max-width: 300px;
+	}
+	.logo--mobile img {
+		margin: 0 auto;
+	}
+	.main {
+		display: block;
+		width: 100%;
+		padding: 30px;
+		padding-top: 0;
+	}
+	.left, .right {
+		display: block;
+		width: 100%;
+		position: relative;
+	}
+	.left {
+		margin-bottom: 30px;
+	}
+	.right {
+		margin-top: 0;
+	}
+	.img {
+		width: 100%;
+	}
+	.text {
+		margin: 0;
+		max-width: none;
+	}
+	.book-it {
+		display: block;
+		margin: 20px 0;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		border: 10px solid #fff;
+	}
+	.paint {
+		max-width: 100%;
+		
 	}
 }
